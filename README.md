@@ -1,7 +1,3 @@
-Here's a properly formatted version of your README:
-
----
-
 # Brics Banking Application
 
 ## Overview
@@ -34,7 +30,7 @@ To get started with the Brics Banking application, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/brics-banking.git
+   git clone https://github.com/Dillon-Duncan/brics-banking.git
    cd brics-banking
    ```
 
