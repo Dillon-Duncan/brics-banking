@@ -14,7 +14,6 @@ Brics Banking is a full-stack web application designed to manage user accounts a
 - [API Endpoints](#api-endpoints)
   - [User Endpoints](#user-endpoints)
   - [Transaction Endpoints](#transaction-endpoints)
-- [Environment Variables](#environment-variables)
 - [Dependencies](#dependencies)
   - [Frontend](#frontend)
   - [Backend](#backend)
