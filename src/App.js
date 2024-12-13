@@ -27,8 +27,8 @@ function App() {
         <Route path="/user/login" element={<UserLogin setLoggedInAccountNumber={setLoggedInAccountNumber} />} />
         <Route path="/user/register" element={<UserRegister />} />
         <Route path="/user/dashboard" element={<UserDashboard loggedInAccountNumber={loggedInAccountNumber} />} />
-        <Route path="/user/dashboard/history" element={<UserHistory />} />
-        <Route path="/user/dashboard/transaction" element={<UserTransaction />} />
+        <Route path="/user/dashboard/history" element={<UserHistory loggedInAccountNumber={loggedInAccountNumber} />} />
+        <Route path="/user/dashboard/transaction" element={<UserTransaction loggedInAccountNumber={loggedInAccountNumber} />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/dashboard/approve" element={<AdminApprove />} />
