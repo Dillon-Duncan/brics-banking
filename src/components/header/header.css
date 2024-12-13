@@ -1,0 +1,12 @@
+@media (max-width: 580px)
+{
+    .navbar .nav-link-admin
+    {
+        margin-right: 0;
+    }
+
+    .navbar .nav-link
+    {
+        margin-left: 0;
+    }
+}
