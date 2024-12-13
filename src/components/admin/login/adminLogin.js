@@ -23,19 +23,19 @@ const AdminLogin = () => {
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>Admin Login</h1>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSubmit} className="login-form">
+        <div className="form-group">
           <label>Username:</label>
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password:</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="submit-button">Login</button>
       </form>
     </div>
   );

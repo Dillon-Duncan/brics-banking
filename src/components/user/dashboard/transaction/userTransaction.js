@@ -28,20 +28,20 @@ const UserTransaction = ({ loggedInAccountNumber }) => {
   };
 
   return (
-    <div>
+    <div className="transaction-container">
       <h1>User Transaction</h1>
-      {status && <p>{status}</p>}
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
+      {status && <p className="status">{status}</p>}
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSubmit} className="transaction-form">
+        <div className="form-group">
           <label>Recipient Account Number:</label>
           <input type="text" value={toAccount} onChange={(e) => setToAccount(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label>Amount:</label>
           <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label>Currency:</label>
           <select value={currency} onChange={(e) => setCurrency(e.target.value)} required>
             <option value="ZAR">ZAR</option>
@@ -51,11 +51,11 @@ const UserTransaction = ({ loggedInAccountNumber }) => {
             <option value="CNY">CNY</option>
           </select>
         </div>
-        <div>
+        <div className="form-group">
           <label>SWIFT Code:</label>
           <input type="text" value={swiftCode} onChange={(e) => setSwiftCode(e.target.value)} required />
         </div>
-        <button type="submit">Submit Transaction</button>
+        <button type="submit" className="submit-button">Submit Transaction</button>
       </form>
     </div>
   );

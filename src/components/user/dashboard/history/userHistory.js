@@ -23,12 +23,12 @@ const UserHistory = ({ loggedInAccountNumber }) => {
   }, [loggedInAccountNumber]);
 
   return (
-    <div>
+    <div className="history-container">
       <h1>User History</h1>
-      {error && <p>{error}</p>}
-      <ul>
+      {error && <p className="error">{error}</p>}
+      <ul className="transaction-list">
         {transactions.map((transaction) => (
-          <li key={transaction._id}>
+          <li key={transaction._id} className="transaction-item">
             From: {transaction.fromAccount} - To: {transaction.toAccount} - Amount: {transaction.amount} {transaction.currency} - Status: {transaction.status}
           </li>
         ))}

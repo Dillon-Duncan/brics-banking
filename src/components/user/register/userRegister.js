@@ -15,35 +15,34 @@ const UserRegister = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/api/users', { username, accountNumber, email, password, currency });
-      // Handle successful registration
-      navigate('/user/login'); // Redirect to login page
+      navigate('/user/login');
     } catch (err) {
       setError('Registration failed');
     }
   };
 
   return (
-    <div>
+    <div className="register-container">
       <h1>User Registration</h1>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSubmit} className="register-form">
+        <div className="form-group">
           <label>Username:</label>
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label>Account Number:</label>
           <input type="text" value={accountNumber} onChange={(e) => setAccountNumber(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label>Email:</label>
           <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password:</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label>Currency:</label>
           <select value={currency} onChange={(e) => setCurrency(e.target.value)} required>
             <option value="ZAR">ZAR</option>
@@ -53,7 +52,7 @@ const UserRegister = () => {
             <option value="CNY">CNY</option>
           </select>
         </div>
-        <button type="submit">Register</button>
+        <button type="submit" className="submit-button">Register</button>
       </form>
     </div>
   );

@@ -13,32 +13,31 @@ const UserLogin = ({ setLoggedInAccountNumber }) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/api/users/login', { username, accountNumber, password });
-      // Handle successful login (e.g., store token)
-      setLoggedInAccountNumber(accountNumber); // Save account number globally
-      navigate('/user/dashboard'); // Redirect to user dashboard
+      setLoggedInAccountNumber(accountNumber);
+      navigate('/user/dashboard');
     } catch (err) {
       setError('Invalid username, account number, or password');
     }
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h1>User Login</h1>
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div>
+      {error && <p className="error">{error}</p>}
+      <form onSubmit={handleSubmit} className="login-form">
+        <div className="form-group">
           <label>Username:</label>
           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label>Account Number:</label>
           <input type="text" value={accountNumber} onChange={(e) => setAccountNumber(e.target.value)} required />
         </div>
-        <div>
+        <div className="form-group">
           <label>Password:</label>
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className="submit-button">Login</button>
       </form>
     </div>
   );

@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
 }
 
 .App-logo {
@@ -35,4 +38,258 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* User Register */
+.register-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form .form-group {
+  margin-bottom: 15px;
+}
+
+.register-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.register-form input,
+.register-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: red;
+  margin-bottom: 15px;
+}
+
+/* User Login */
+.login-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form .form-group {
+  margin-bottom: 15px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* User Dashboard */
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.dashboard-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dashboard-button:hover {
+  background-color: #0056b3;
+}
+
+/* User Transaction */
+.transaction-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-form .form-group {
+  margin-bottom: 15px;
+}
+
+.transaction-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.transaction-form input,
+.transaction-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.status {
+  color: green;
+  margin-bottom: 15px;
+}
+
+/* User History */
+.history-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transaction-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Admin Login */
+.login-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form .form-group {
+  margin-bottom: 15px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Admin History */
+.history-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transaction-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Admin Approve */
+.approve-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transaction-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.action-buttons {
+  margin-top: 10px;
+}
+
+.approve-button,
+.reject-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.approve-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.approve-button:hover {
+  background-color: #218838;
+}
+
+.reject-button {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.reject-button:hover {
+  background-color: #c82333;
 }

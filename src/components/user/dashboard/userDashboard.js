@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 const UserDashboard = ({ loggedInAccountNumber }) => {
   return (
-    <div>
+    <div className="dashboard-container">
       <h1>User Dashboard</h1>
       <p>Welcome, your account number is: {loggedInAccountNumber}</p>
-      <div>
+      <div className="dashboard-buttons">
         <Link to="/user/dashboard/transaction">
-          <button>User Transaction</button>
+          <button className="dashboard-button">User Transaction</button>
         </Link>
         <Link to="/user/dashboard/history">
-          <button>User History</button>
+          <button className="dashboard-button">User History</button>
         </Link>
       </div>
     </div>

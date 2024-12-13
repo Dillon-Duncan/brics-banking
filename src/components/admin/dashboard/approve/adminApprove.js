@@ -44,17 +44,17 @@ const AdminApprove = () => {
     };
 
     return (
-        <div>
+        <div className="approve-container">
             <h1>Admin Approve</h1>
-            {error && <p>{error}</p>}
-            <ul>
+            {error && <p className="error">{error}</p>}
+            <ul className="transaction-list">
                 {transactions.map(transaction => (
-                    <li key={transaction._id}>
+                    <li key={transaction._id} className="transaction-item">
                         {transaction.fromAccount} to {transaction.toAccount} - {transaction.amount} {transaction.currency} - {transaction.status}
                         {transaction.status === 'Pending' && (
-                            <div>
-                                <button onClick={() => handleApprove(transaction._id)}>Approve</button>
-                                <button onClick={() => handleReject(transaction._id)}>Reject</button>
+                            <div className="action-buttons">
+                                <button onClick={() => handleApprove(transaction._id)} className="approve-button">Approve</button>
+                                <button onClick={() => handleReject(transaction._id)} className="reject-button">Reject</button>
                             </div>
                         )}
                     </li>
