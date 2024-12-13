@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const UserTransaction = ({ loggedInAccountNumber }) => {
   const [toAccount, setToAccount] = useState('');
@@ -8,6 +9,8 @@ const UserTransaction = ({ loggedInAccountNumber }) => {
   const [swiftCode, setSwiftCode] = useState('');
   const [status, setStatus] = useState('');
   const [error, setError] = useState('');
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,11 +38,28 @@ const UserTransaction = ({ loggedInAccountNumber }) => {
       <form onSubmit={handleSubmit} className="transaction-form">
         <div className="form-group">
           <label>Recipient Account Number:</label>
-          <input type="text" value={toAccount} onChange={(e) => setToAccount(e.target.value)} required />
+          <input
+            type="text"
+            value={toAccount}
+            onChange={(e) => setToAccount(e.target.value)}
+            required
+            pattern="^\d{10}$"
+            title="Account number should be exactly 10 digits."
+            placeholder="Enter recipient account number"
+          />
         </div>
         <div className="form-group">
           <label>Amount:</label>
-          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} required />
+          <input
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            required
+            min="1"
+            step="0.01"
+            title="Amount should be a positive number."
+            placeholder="Enter amount"
+          />
         </div>
         <div className="form-group">
           <label>Currency:</label>
@@ -53,7 +73,15 @@ const UserTransaction = ({ loggedInAccountNumber }) => {
         </div>
         <div className="form-group">
           <label>SWIFT Code:</label>
-          <input type="text" value={swiftCode} onChange={(e) => setSwiftCode(e.target.value)} required />
+          <input
+            type="text"
+            value={swiftCode}
+            onChange={(e) => setSwiftCode(e.target.value)}
+            required
+            pattern="^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$"
+            title="SWIFT code should be 8 or 11 characters long and contain only uppercase letters and numbers."
+            placeholder="Enter SWIFT code"
+          />
         </div>
         <button type="submit" className="submit-button">Submit Transaction</button>
       </form>
