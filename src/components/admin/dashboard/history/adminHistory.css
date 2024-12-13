@@ -1,5 +1,7 @@
 .history-container {
-    // ...existing styles...
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
 .scrollable-list {
