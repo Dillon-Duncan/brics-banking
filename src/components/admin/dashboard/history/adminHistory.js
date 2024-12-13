@@ -30,13 +30,15 @@ const AdminHistory = () => {
         <div className="history-container">
             <h1>Admin History</h1>
             {error && <p className="error">{error}</p>}
-            <ListGroup as="ol" numbered>
-                {transactions.map(transaction => (
-                    <ListGroup.Item as="li" key={transaction._id}>
-                        {transaction.fromAccount} to {transaction.toAccount} - {transaction.amount} {transaction.currency} - {transaction.status}
-                    </ListGroup.Item>
-                ))}
-            </ListGroup>
+            <div className="scrollable-list">
+                <ListGroup as="ol" numbered>
+                    {transactions.map(transaction => (
+                        <ListGroup.Item as="li" key={transaction._id}>
+                            {transaction.fromAccount} to {transaction.toAccount} - {transaction.amount} {transaction.currency} - {transaction.status}
+                        </ListGroup.Item>
+                    ))}
+                </ListGroup>
+            </div>
         </div>
     );
 };

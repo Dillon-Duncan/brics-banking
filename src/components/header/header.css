@@ -10,3 +10,11 @@
         margin-left: 0;
     }
 }
+
+.logout-link {
+    color: #dc3545 !important;
+}
+
+.logout-link:hover {
+    color: #c82333 !important;
+}

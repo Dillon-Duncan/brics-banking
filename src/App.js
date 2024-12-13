@@ -14,6 +14,7 @@ import AdminDashboard from './components/admin/dashboard/adminDashboard';
 import AdminLogin from './components/admin/login/adminLogin';
 
 import Header from './components/header/header';
+import Home from './components/home/home';
 
 import NoMatch from './components/nomatch/noMatch';
 
@@ -24,6 +25,7 @@ function App() {
     <>
       <Header />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/user/login" element={<UserLogin setLoggedInAccountNumber={setLoggedInAccountNumber} />} />
         <Route path="/user/register" element={<UserRegister />} />
         <Route path="/user/dashboard" element={<UserDashboard loggedInAccountNumber={loggedInAccountNumber} />} />

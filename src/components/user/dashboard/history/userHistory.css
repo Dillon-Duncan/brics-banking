@@ -1,0 +1,9 @@
+
+.history-container {
+    // ...existing styles...
+}
+
+.scrollable-list {
+    max-height: 400px;
+    overflow-y: auto;
+}

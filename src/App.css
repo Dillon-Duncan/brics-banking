@@ -209,6 +209,11 @@
   margin-bottom: 5px;
 }
 
+.scrollable-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 /* Admin Login */
 .login-container {
   max-width: 500px;
@@ -254,6 +259,11 @@
 .transaction-item {
   padding: 10px;
   border-bottom: 1px solid #ccc;
+}
+
+.scrollable-list {
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 /* Admin Approve */
@@ -305,4 +315,18 @@
 
 .reject-button:hover {
   background-color: #c82333;
+}
+
+/* Home Page */
+.home-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
 }

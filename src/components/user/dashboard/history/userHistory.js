@@ -33,18 +33,20 @@ const UserHistory = ({ loggedInAccountNumber }) => {
     <div className="history-container">
       <h1>User History</h1>
       {error && <p className="error">{error}</p>}
-      <ListGroup as="ol" numbered>
-        {transactions.map((transaction) => (
-          <ListGroup.Item as="li" key={transaction._id}>
-            <div className="transaction-details">
-              <span className="transaction-from">From: {transaction.fromAccount}</span>
-              <span className="transaction-to">To: {transaction.toAccount}</span>
-              <span className="transaction-amount">Amount: {transaction.amount} {transaction.currency}</span>
-              <span className="transaction-status">Status: {transaction.status}</span>
-            </div>
-          </ListGroup.Item>
-        ))}
-      </ListGroup>
+      <div className="scrollable-list">
+        <ListGroup as="ol" numbered>
+          {transactions.map((transaction) => (
+            <ListGroup.Item as="li" key={transaction._id}>
+              <div className="transaction-details">
+                <span className="transaction-from">From: {transaction.fromAccount}</span>
+                <span className="transaction-to">To: {transaction.toAccount}</span>
+                <span className="transaction-amount">Amount: {transaction.amount} {transaction.currency}</span>
+                <span className="transaction-status">Status: {transaction.status}</span>
+              </div>
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
+      </div>
     </div>
   );
 };
