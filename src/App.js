@@ -8,7 +8,7 @@ import UserDashboard from './components/user/dashboard/userDashboard';
 import UserLogin from './components/user/login/userLogin';
 import UserRegister from './components/user/register/userRegister';
 
-import AdminApprove from './components/admin/dashboard/aprrove/adminApprove';
+import AdminApprove from './components/admin/dashboard/approve/adminApprove';
 import AdminHistory from './components/admin/dashboard/history/adminHistory';
 import AdminDashboard from './components/admin/dashboard/adminDashboard';
 import AdminLogin from './components/admin/login/adminLogin';
