@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import Router components
 import { useNavigate } from 'react-router-dom';
+import { createRoot } from 'react-dom/client'; // Import createRoot
 
 const UserRegister = () => {
   const [username, setUsername] = useState('');
@@ -17,7 +19,11 @@ const UserRegister = () => {
       const response = await axios.post('http://localhost:5000/api/users', { username, accountNumber, email, password, currency });
       navigate('/user/login');
     } catch (err) {
-      setError('Registration failed');
+      if (err.response && err.response.status === 400) {
+        setError('Registration failed: ' + err.response.data.message);
+      } else {
+        setError('Registration failed');
+      }
     }
   };
 
@@ -88,4 +94,16 @@ const UserRegister = () => {
 };
 
 export default UserRegister;
+
+// Assuming this is the entry point of your app
+const container = document.getElementById('root');
+const root = createRoot(container); // Create a root
+root.render(
+  <Router>
+    <Routes>
+      <Route path="/register" element={<UserRegister />} />
+      {/* Add other routes here if needed */}
+    </Routes>
+  </Router>
+); // Render the component within Router
 
