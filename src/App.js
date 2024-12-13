@@ -1,5 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 
 import UserHistory from './components/user/dashboard/history/userHistory';
 import UserTransaction from './components/user/dashboard/transaction/userTransaction';
@@ -17,26 +18,23 @@ import Header from './components/header/header';
 import NoMatch from './components/nomatch/noMatch';
 
 function App() {
+  const [loggedInAccountNumber, setLoggedInAccountNumber] = useState(null);
+
   return (
     <>
-    <Header />
-    <Routes>
-      
-      <Route path="/user/login" element={<UserLogin />} />
-      <Route path="/user/register" element={<UserRegister />} />
-      
-      <Route path="/user/dashboard" element={<UserDashboard />} />
-      <Route path="/user/dashboard/history" element={<UserHistory />} />
-      <Route path="/user/dashboard/transaction" element={<UserTransaction />} />
-      
-      <Route path="/admin/login" element={<AdminLogin />} />
-      
-      <Route path="/admin/dashboard" element={<AdminDashboard />} />
-      <Route path="/admin/dashboard/approve" element={<AdminApprove />} />
-      <Route path="/admin/dashboard/history" element={<AdminHistory />} />
-      
-      <Route path="*" element={<NoMatch />} />
-    </Routes>
+      <Header />
+      <Routes>
+        <Route path="/user/login" element={<UserLogin setLoggedInAccountNumber={setLoggedInAccountNumber} />} />
+        <Route path="/user/register" element={<UserRegister />} />
+        <Route path="/user/dashboard" element={<UserDashboard loggedInAccountNumber={loggedInAccountNumber} />} />
+        <Route path="/user/dashboard/history" element={<UserHistory />} />
+        <Route path="/user/dashboard/transaction" element={<UserTransaction />} />
+        <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/dashboard/approve" element={<AdminApprove />} />
+        <Route path="/admin/dashboard/history" element={<AdminHistory />} />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
     </>
   );
 }

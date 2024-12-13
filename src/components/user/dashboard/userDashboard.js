@@ -1,12 +1,13 @@
 import React from 'react';
 
-const userDashboard = () => 
-{
-    return (
-        <div>
-            <h1>User Dashboard</h1>
-        </div>
-    );
+const UserDashboard = ({ loggedInAccountNumber }) => {
+  return (
+    <div>
+      <h1>User Dashboard</h1>
+      <p>Welcome, your account number is: {loggedInAccountNumber}</p>
+    </div>
+  );
 };
-export default userDashboard;
+
+export default UserDashboard;
 
